@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Cookies from "universal-cookie";
 import axios from "axios";
 
-import signinImage from "../assets/signup.jpg";
-
 const cookies = new Cookies();
 
 const initialState = {
@@ -28,7 +26,7 @@ const Auth = () => {
 
     const { username, password, phoneNumber, avatarURL } = form;
 
-    const URL = "http://localhost:5000/auth";
+    const URL = "https://somekindofwebsitetwo.onrender.com/auth";
 
     const {
       data: { token, userId, hashedPassword, fullName },
@@ -62,7 +60,7 @@ const Auth = () => {
     <div className="auth__form-container">
       <div className="auth__form-container_fields">
         <div className="auth__form-container_fields-content">
-          <p>{isSignup ? "Зарегистрироваться" : "Sign In"}</p>
+          <p>{isSignup ? "Зарегистрироваться" : "Войти"}</p>
           <form onSubmit={handleSubmit}>
             {isSignup && (
               <div className="auth__form-container_fields-content_input">
