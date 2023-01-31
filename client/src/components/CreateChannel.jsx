@@ -19,53 +19,58 @@ const ChannelNameInput = ({ channelName = "", setChannelName }) => {
         onChange={handleChange}
         placeholder="channel-name"
       />
-      <p>Добавить участников</p>
+      <p>Добавить пользователя</p>
     </div>
   );
 };
 
-const EditChannel = ({ setIsEditing }) => {
-  const { channel } = useChatContext();
-  const [channelName, setChannelName] = useState(channel?.data?.name);
-  const [selectedUsers, setSelectedUsers] = useState([]);
+const CreateChannel = ({ createType, setIsCreating }) => {
+  const { client, setActiveChannel } = useChatContext();
+  const [selectedUsers, setSelectedUsers] = useState([client.userID || ""]);
+  const [channelName, setChannelName] = useState("");
 
-  const updateChannel = async (event) => {
-    event.preventDefault();
+  const createChannel = async (e) => {
+    e.preventDefault();
 
-    const nameChanged = channelName !== (channel.data.name || channel.data.id);
+    try {
+      const newChannel = await client.channel(createType, channelName, {
+        name: channelName,
+        members: selectedUsers,
+      });
 
-    if (nameChanged) {
-      await channel.update(
-        { name: channelName },
-        { text: `Название канала изменено на ${channelName}` }
-      );
+      await newChannel.watch();
+
+      setChannelName("");
+      setIsCreating(false);
+      setSelectedUsers([client.userID]);
+      setActiveChannel(newChannel);
+    } catch (error) {
+      console.log(error);
     }
-
-    if (selectedUsers.length) {
-      await channel.addMembers(selectedUsers);
-    }
-
-    setChannelName(null);
-    setIsEditing(false);
-    setSelectedUsers([]);
   };
 
   return (
-    <div className="edit-channel__container">
-      <div className="edit-channel__header">
-        <p>Создание канала</p>
-        <CloseCreateChannel setIsEditing={setIsEditing} />
+    <div className="create-channel__container">
+      <div className="create-channel__header">
+        <p>
+          {createType === "team"
+            ? "Создать новый канал"
+            : "Отправить личное сообщение"}
+        </p>
+        <CloseCreateChannel setIsCreating={setIsCreating} />
       </div>
-      <ChannelNameInput
-        channelName={channelName}
-        setChannelName={setChannelName}
-      />
+      {createType === "team" && (
+        <ChannelNameInput
+          channelName={channelName}
+          setChannelName={setChannelName}
+        />
+      )}
       <UserList setSelectedUsers={setSelectedUsers} />
-      <div className="edit-channel__button-wrapper" onClick={updateChannel}>
-        <p>Сохранить</p>
+      <div className="create-channel__button-wrapper" onClick={createChannel}>
+        <p>{createType === "team" ? "Создать канал" : "Создать чат"}</p>
       </div>
     </div>
   );
 };
 
-export default EditChannel;
+export default CreateChannel;
