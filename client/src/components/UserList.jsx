@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Avatar, useChatContext } from "stream-chat-react";
-import { initialState } from "stream-chat-react/dist/components/Channel/channelState";
 
 import { InviteIcon } from "../assets";
 
@@ -8,8 +7,8 @@ const ListContainer = ({ children }) => {
   return (
     <div className="user-list__container">
       <div className="user-list__header">
-        <p>Пользователь</p>
-        <p>Пригласить</p>
+        <p>User</p>
+        <p>Invite</p>
       </div>
       {children}
     </div>
@@ -80,7 +79,7 @@ const UserList = ({ setSelectedUsers }) => {
     return (
       <ListContainer>
         <div className="user-list__message">
-          Ошибка загрузки, пожалуйста, обновите и повторите попытку
+          Error loading, please refresh and try again.
         </div>
       </ListContainer>
     );
@@ -89,7 +88,7 @@ const UserList = ({ setSelectedUsers }) => {
   if (listEmpty) {
     return (
       <ListContainer>
-        <div className="user-list__message">Пользователи не найдены.</div>
+        <div className="user-list__message">No users found.</div>
       </ListContainer>
     );
   }
@@ -97,7 +96,7 @@ const UserList = ({ setSelectedUsers }) => {
   return (
     <ListContainer>
       {loading ? (
-        <div className="user-list__message">Загрузка пользователей...</div>
+        <div className="user-list__message">Loading users...</div>
       ) : (
         users?.map((user, i) => (
           <UserItem

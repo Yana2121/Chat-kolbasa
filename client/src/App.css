@@ -22,6 +22,7 @@
   
   .channel_container {
     width: 100%;
+    background-color: #2B2B2B
   }
 
   .channel-empty__container {
@@ -35,7 +36,7 @@
     justify-content: center;
   
     padding: 2rem;
-    background: #005fff;
+    background: #2B2B2B;
   }
   
   .auth__form-container_image {
@@ -52,7 +53,7 @@
   .account{
     font-size: 20;
     font-family: Arial, Helvetica, sans-serif;
-    color: #000;
+    color: rgb(226, 226, 226);
   }
 
   .cursor{
@@ -70,13 +71,14 @@
     box-shadow: 0px 1px 5px rgb(0 0 0 / 10%);
     border-radius: 5px;
     transition: 0.8s ease;
-    background: #fff;
+    background: #8A8A8A;
   }
   
   .auth__form-container_fields-content p {
     font-size: 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
-    color: #05245a;
+    color: #e4e4e4;
+    
     font-weight: 900;
   }
   
@@ -90,7 +92,7 @@
   
   .auth__form-container_fields-content_input label {
     margin-bottom: 0.45rem;
-    color: rgb(61, 79, 88);
+    color: #ebebeb;
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 0.7px;
@@ -105,11 +107,11 @@
     outline: none;
     transition: all 150ms ease-in-out 0s;
     width: 85%;
-    background: #fff;
+    background: #2B2B2B;
   }
   
   .auth__form-container_fields-content_input input::placeholder {
-    color: #b1b1b1;
+    color: #b6b6b6;
     width: 100%;
     font-weight: unset;
     font-family: Arial, Helvetica, sans-serif;
@@ -121,8 +123,8 @@
   
   .auth__form-container_fields-content_input input:focus,
   .auth__form-container_fields-content_input input:active {
-    box-shadow: 0px 0px 0px 1.5px #005fff;
-    border-color: #005fff;
+    box-shadow: 0px 0px 0px 1.5px #db57c5;
+    border-color: #db57c5;
   }
   
   .auth__form-container_fields-content_input-password {
@@ -140,8 +142,8 @@
   
   .auth__form-container_fields-content_button button {
     border-radius: 4px;
-    background: #005fff;
-    border: 1px solid #005fff;
+    background: #7c306f;
+    border: 1px solid #7c306f;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
@@ -152,7 +154,7 @@
   }
   
   .auth__form-container_fields-content_button button:hover {
-    background: #0066ff;
+    background: #c54fb1;
   }
   
   .auth__form-container_fields-account {
@@ -165,12 +167,12 @@
   
   .auth__form-container_fields-account p {
     font-size: 14px;
-    color: #000;
+    color: rgb(212, 212, 212);
     font-weight: 500;
   }
   
   .auth__form-container_fields-account span {
-    color: #05245a;
+    color: #7c306f;
     cursor: pointer;
     font-weight: 700;
   }
@@ -300,7 +302,7 @@
     font-weight: bold;
     font-size: 18px;
     line-height: 120%;
-    color: #2c2c30;
+    color: #88888a;
     margin-bottom: 10px;
   }
   
@@ -324,6 +326,7 @@
   .str-chat__thread {
     z-index: 1;
   }
+  
   
   .str-chat__thread-list .str-chat__message-team {
     border-left: 1px solid rgba(0, 0, 0, 0.1);
@@ -364,7 +367,7 @@
     font-weight: bold;
     font-size: 18px;
     line-height: 22px;
-    color: #2c2c30;
+    color: #727277;
     margin-right: 10px;
   }
   
@@ -397,7 +400,7 @@
   .channel-list__sidebar {
     width: 72px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      var(--primary-color);
+     #7c306f;
     box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.25);
     /* border-top-left-radius: 16px; */
     /* border-bottom-left-radius: 16px; */
@@ -420,7 +423,7 @@
   .channel-list__list__wrapper {
     display: flex;
     flex-direction: column;
-    background: var(--primary-color);
+    background: #b449a2;
     width: 240px;
   }
   
@@ -430,6 +433,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    
   }
   
   .channel-list__sidebar__icon2 {
@@ -483,7 +488,7 @@
     justify-content: center;
     align-items: center;
     height: 40px;
-    background: rgba(255, 255, 255, 0.2);
+    background: #2B2B2B;
     border-radius: 8px;
     margin-bottom: 8px;
     border: 1px solid transparent;
@@ -645,7 +650,7 @@
   .channel-name-input__wrapper input {
     font-family: Helvetica Neue, sans-serif;
     font-size: 18px;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(216, 216, 216, 0.5);
     height: 50px;
     width: 540px;
     background: #f7f6f8;
@@ -722,7 +727,7 @@
   .user-list__message {
     font-family: Helvetica Neue, sans-serif;
     font-size: 16px;
-    color: #2c2c30;
+    color: #606064;
     margin: 20px;
   }
   
@@ -749,7 +754,7 @@
     font-family: Helvetica Neue, sans-serif;
     font-size: 14px;
     line-height: 17px;
-    color: #2c2c30;
+    color: #65656b;
     word-break: break-all;
   }
   
@@ -796,7 +801,7 @@
     font-weight: bold;
     font-size: 18px;
     line-height: 22px;
-    color: #2c2c30;
+    color: #727275;
     margin-left: 20px;
   }
   
@@ -816,14 +821,14 @@
     font-family: Helvetica Neue, sans-serif;
     font-size: 16px;
     line-height: 120%;
-    color: #2c2c30;
+    color: #616164;
     margin-top: 30px;
   }
   
   .channel-name-input__wrapper input {
     font-family: Helvetica Neue, sans-serif;
     font-size: 18px;
-    color: rgba(0, 0, 0);
+    color: rgb(119, 114, 114);
     height: 50px;
     width: 90%;
     background: #f7f6f8;
@@ -840,7 +845,7 @@
   
   .channel-name-input__wrapper input::placeholder {
     font-weight: 300;
-    color: rgba(0, 0, 0, 0.5);
+    color: #fff;
   }
   
   .edit-channel__button-wrapper {
@@ -890,7 +895,7 @@
     font-family: Helvetica Neue, sans-serif;
     font-weight: bold;
     font-size: 18px;
-    color: #2c2c30;
+    color: #5e5e61;
     margin-right: 8px;
   }
   
@@ -1081,7 +1086,7 @@
     font-style: normal;
     font-weight: normal;
     line-height: 120%;
-    color: #000000;
+    color: #727272;
     margin: 0;
     background: none;
   }
@@ -1110,7 +1115,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 10px;
-    color: #858688;
+    color: #d8d9db;
     margin-top: 4px;
   }
   
@@ -1283,7 +1288,7 @@
   
   .str-chat__edit-message-form .str-chat__message-team-form-footer button {
     cursor: pointer;
-    color: rgba(0, 0, 0, 0.33);
+    color: rgba(158, 157, 157, 0.33);
     font-family: Helvetica Neue, sans-serif;
     font-size: 14px;
   }
@@ -1536,7 +1541,7 @@
     font-family: Helvetica Neue, sans-serif;
     font-size: 14px;
     line-height: 16px;
-    color: #2c2c30;
+    color: #a9a9af;
     mix-blend-mode: normal;
     opacity: 0.9;
   }
@@ -1565,7 +1570,7 @@
     font-weight: bold;
     font-size: 18px;
     line-height: 22px;
-    color: #2c2c30;
+    color: #777779;
     margin-right: 10px;
   }
   

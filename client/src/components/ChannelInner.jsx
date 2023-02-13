@@ -98,7 +98,7 @@ const TeamChannelHeader = ({ setIsEditing }) => {
 
   const getWatcherText = (watchers) => {
     if (!watchers) return "Нет пользователей онлайн";
-    if (watchers === 1) return "1 пользователь онлайн";
+    if (watchers === 1) return "1 пользователь оналйн";
     return `${watchers} пользователей онлайн`;
   };
 
